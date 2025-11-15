@@ -1,0 +1,1 @@
+{"name":"Local: main","url":"/Users/macus/Workspace/Cedt/DSAP/d63_q2b_vector_compress/main.cpp","tests":[{"id":1762325887288,"input":"5\n1 2 3 4 5","output":"mSize of v is 5\nmCap  of v is 5\n1 2 3 4 5 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/macus/Workspace/Cedt/DSAP/d63_q2b_vector_compress/main.cpp","group":"local","local":true}

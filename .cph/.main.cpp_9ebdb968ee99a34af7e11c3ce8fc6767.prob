@@ -1,0 +1,1 @@
+{"name":"Local: main","url":"/Users/macus/Workspace/Cedt/DSAP/main.cpp","tests":[{"id":1762239161095,"input":"9 “no”\n9 “zzz”","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/macus/Workspace/Cedt/DSAP/main.cpp","group":"local","local":true}
