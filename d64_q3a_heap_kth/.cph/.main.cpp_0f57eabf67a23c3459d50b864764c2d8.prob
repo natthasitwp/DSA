@@ -1,0 +1,1 @@
+{"name":"Local: main","url":"/home/natthasitw/projects/DSA/d64_q3a_heap_kth/main.cpp","tests":[{"id":1763203946534,"input":"1\n1 2\n7\n9 3 2 8 11 2 99","output":"99\n11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/natthasitw/projects/DSA/d64_q3a_heap_kth/main.cpp","group":"local","local":true}
