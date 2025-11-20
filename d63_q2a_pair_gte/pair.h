@@ -34,7 +34,15 @@ class pair
       assert(false);
     }
 
-    bool operator>=(const pair<T1,T2>& other) const;
+    bool operator>=(const pair<T1,T2>& other) const{
+      if((first == other.first && second == other.second))
+        return true;
+      if(first == other.first && second > other.second)
+        return true;
+      if(first > other.first)
+        return true
+      return false;
+    }
 
 
 };

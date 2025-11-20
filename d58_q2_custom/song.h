@@ -24,32 +24,36 @@ class Song {
 
 };
 
+class Comp1{
+  public:
+    bool operator()(Song lhs,Song rhs){
+        if(lhs.artist == rhs.artist)
+        {
+          return lhs.title > rhs.title;
+        }
+      return lhs.artist > rhs.artist;
+    }
+};
+
+class Comp2{
+  public:
+    bool operator()(Song lhs,Song rhs){
+        if(lhs.count == rhs.count)
+        {
+          if (lhs.artist == rhs.artist)
+          {
+            return lhs.title > rhs.title;
+          }
+          
+          return lhs.artist > rhs.artist;
+        }
+      return lhs.count < rhs.count;
+    }
+};
 
 //  you have to write something below this line 
-class ByArtistTitleCount{
-  public:
-    bool operator()(const Song& lhs,const Song& rhs){
-        if(lhs.artist == rhs.artist)
-          return lhs.title > rhs.title;
-        return lhs.artist > rhs.artist;
-    }
-};
-
-class ByCountArtistTitle{
-  public:
-    bool operator()(const Song&lhs,const Song& rhs){
-          if (lhs.artist == rhs.artist && lhs.count == rhs.count)
-            return lhs.title > rhs.title;
-          if(lhs.count == rhs.count)
-            return lhs.artist > rhs.artist;
-        return lhs.count < rhs.count;
-    }
-};
-
 //  you *MIGHT* have to change the declaration of pq1 and pq2
-CP::priority_queue<Song,
-                   ByArtistTitleCount> pq1;
-CP::priority_queue<Song,
-                   ByCountArtistTitle> pq2;
+CP::priority_queue<Song,Comp1> pq1;
+CP::priority_queue<Song,Comp2> pq2;
 
 #endif

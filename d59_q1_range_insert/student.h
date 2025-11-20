@@ -6,19 +6,17 @@ void CP::vector<T>::insert(iterator position, iterator first, iterator last)
 {
   // write your code here
   size_t pos = position - begin();
-  size_t range = last - first;
-  ensureCapacity(mSize + range);
+  size_t insertSize = (last - first);
+  ensureCapacity(mSize + insertSize);
 
-  // rearrage value
-  for(size_t i = mSize; i > pos;i--)
-    mData[i + range -1] = mData[i - 1];
+  for(size_t idx =  mSize + insertSize - 1 ; idx >=  pos + insertSize; idx--)
+    mData[idx] = mData[idx - insertSize];
 
-  // insert value
-  for(size_t i = 0 ;i < range ;i++)
-    mData[pos+i] = *(first+i);
+  iterator it = first;
+  for (size_t i = 0; i != insertSize; i++)
+    mData[pos + i] = *(it + i);
 
-  // expand mSize
-  mSize += range;
+  mSize += insertSize;
 }
 
 #endif

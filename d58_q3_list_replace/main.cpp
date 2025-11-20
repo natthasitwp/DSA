@@ -194,18 +194,16 @@ namespace CP
 			auto it = begin();
 			while(it != end())
 			{
-				auto insertPos = it;
 				if(*it == x)
 				{
-					for(auto &item : y)
-						insert(insertPos,item);
+					for(T &data:y)
+						insert(it,data);
 					it = erase(it);
 				}
-
-				else it++;
+				else
+					it++;
 			}
 		}
-		//
 	};
 
 }

@@ -71,6 +71,12 @@
         "cfenv": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "__nullptr": "cpp"
+        "__nullptr": "cpp",
+        "__locale": "cpp",
+        "__verbose_abort": "cpp",
+        "execution": "cpp",
+        "ios": "cpp",
+        "locale": "cpp",
+        "print": "cpp"
     }
 }

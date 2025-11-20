@@ -5,19 +5,21 @@
 template <typename T>
 void CP::stack<T>::mitosis(int a, int b)
 {
-    T *arr = new T[b + 1];
-    for (int i = b; i >= 0; i--)
+    T *temp = new T[b+1];
+    for(size_t i = 0 ;i <= b ;i++)
     {
-        arr[i] = top();
+        temp[i] = top();
         pop();
     }
-
-    for (int i = 0; i <= b; i++)
+    for(size_t i = 0 ; i <= b; i++)
     {
-        if(i < (b-a+1))push(arr[i]);
-        push(arr[i]);
+        
+        if(b-i >= a && b-i <= b)
+            push(temp[b-i]);
+        push(temp[b-i]);
     }
-    delete[] arr;
+   
+    delete[] temp;
 }
 
 #endif

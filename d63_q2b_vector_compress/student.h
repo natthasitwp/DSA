@@ -5,9 +5,9 @@ template <typename T>
 void CP::vector<T>::compress() {
     //write your code here
     T *newData = new T[mSize];
-    for(size_t i= 0;i<mSize;i++)
-        newData[i] = mData[i];
-    delete [] mData;
+    for(size_t idx = 0 ; idx < mSize ; idx++)
+        newData[idx] = mData[idx];
+    delete[] mData;
     mData = newData;
     mCap = mSize;
 }

@@ -2,7 +2,7 @@
 #include <vector>
 #include <stack>
 #include "stack.h"
-#include "student.h"
+#include  "student.h"
 
 using namespace std;
 

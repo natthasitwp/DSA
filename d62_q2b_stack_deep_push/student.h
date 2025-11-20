@@ -5,11 +5,11 @@
 template <typename T>
 void CP::stack<T>::deep_push(size_t pos,const T& value) {
   //write your code here
-  ensureCapacity(mSize+1);
+  ensureCapacity(mSize + 1);
   size_t insertPos = mSize - pos;
-  for(size_t idx = mSize ; idx > insertPos ;idx--)
+  for(size_t idx = mSize ; idx > insertPos ; idx--)
   {
-    mData[idx] = mData[idx-1];
+    mData[idx] = mData[idx - 1];
   }
   mData[insertPos] = value;
   mSize++;

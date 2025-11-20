@@ -1,34 +1,30 @@
 #include <iostream>
 #include <queue>
 #include <map>
-
 using namespace std;
 
 int main()
 {
     int n,k;
-    priority_queue<pair<int,string>> pq;
-    map<string,int> vote;
     cin>>n>>k;
-
-    string s;
+    map<string,int> candidate;
+    priority_queue<pair<int,string>> board;
     while(n--)
     {
-        cin>>s;
-        vote[s]++;
+        string vote;
+        cin>>vote;
+        candidate[vote] += 1;
     }
-
-    for(auto &x:vote)
-        pq.emplace(x.second,x.first);
+    for(auto item : candidate)
+        board.emplace(item.second,item.first);
 
     int minimum;
-    while(!pq.empty() && k--)
+    while (k-- && !board.empty())
     {
-        pair<int,string> candidate = pq.top();
-        minimum = candidate.first;
-        pq.pop();
+        minimum = (board.top()).first;
+        board.pop();
     }
     cout<<minimum;
-
+    
     return 0;
 }
