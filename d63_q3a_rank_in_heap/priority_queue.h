@@ -1,14 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <algorithm>
-#include <functional>
-#include <iostream>
-#include <stdexcept>
+#ifndef _CP_PRIORITY_QUEUE_INCLUDED_
+#define _CP_PRIORITY_QUEUE_INCLUDED_
 
+#include <stdexcept>
+#include <iostream>
+//#pragma once
 
 namespace CP {
 
 template <typename T,typename Comp = std::less<T> >
+
 class priority_queue
 {
   protected:
@@ -60,7 +60,7 @@ class priority_queue
     //-------------- constructor ----------
 
     // copy constructor
-    priority_queue(priority_queue<T,Comp>& a) :
+    priority_queue(const priority_queue<T,Comp>& a) :
       mData(new T[a.mCap]()), mCap(a.mCap), mSize(a.mSize), mLess(a.mLess)
     {
       for (size_t i = 0; i < a.mCap;i++) {
@@ -122,66 +122,13 @@ class priority_queue
       fixDown(0);
     }
 
-    void erase(const T& v) {
-      //erase v from the heap (if exists)
-      //write your code here
-      size_t idx = 0;
-      for(;idx <= mSize;idx++) 
-        if(idx == mSize) return; // not exits
-        else if(mData[idx] == v) 
-          break;
-      
-      mData[idx] = mData[mSize-1];
-      mSize--;
-      fixUp(idx);
-      fixDown(idx);
-    }
+    size_t get_rank(size_t pos) const;
 
-    void check_and_print() {
-      //check HEAP
-      for (int i =1;i < mSize;i++) {
-        int p = (i-1)/2;
-        if (mLess(mData[p],mData[i])) {
-          printf("NOT A HEAP\n");
-          return ;
-        }
-      }
 
-      //print the heap
-      while (!empty()) {
-        std::cout << top() << " ";
-        pop();
-      }
-      std::cout << std::endl;
-    }
 };
 
 }
 
-//---------------------------------------------
-int main(int argc, char *argv[]) {
+#endif
 
-	char c = 0;
-  CP::priority_queue<int> h;
-	scanf("%c", &c);
-  int v;
-	while (c != 'q') {
-		if (c == 'i') {
-			// insert
-			scanf("%d", &v);
-      h.push(v);
-		} else
-		if (c == 'x') {
-			// remove min
-      h.pop();
-		} else
-		if (c == 'd') {
-			// remove data
-			scanf("%d", &v);
-      h.erase(v);
-		}
-		scanf("%c", &c);
-	}
-	h.check_and_print();
-  return 0;
-}
+
