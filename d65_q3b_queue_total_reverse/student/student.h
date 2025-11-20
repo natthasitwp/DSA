@@ -5,15 +5,16 @@
 template <typename T>
 void CP::queue<T>::reverse() {
   // Your code here
-      if(aux == 0)
-    {
+  if(aux == 0)
+  {
     mFront = (mFront + mSize - 1) % mCap;
     aux = 1;
-    }
-    else if(aux == 1){
-      mFront = (mFront - mSize + 1 + mCap) % mCap;
-      aux = 0;
-    }
+  }
+  else
+  {
+    mFront = (mFront - mSize + 1 + mCap) % mCap;
+    aux = 0;
+  }
 }
 
 template <typename T>
@@ -26,9 +27,8 @@ template <typename T>
 const T& CP::queue<T>::back() const {
   // You MAY need to edit this function
   if(aux == 1)
-  {
     return mData[(mFront - mSize + 1 + mCap) % mCap];
-  }
+  
   return mData[(mFront + mSize - 1) % mCap];
 }
 
@@ -48,7 +48,7 @@ void CP::queue<T>::pop() {
   // You MAY need to edit this function
   if(aux == 1)
     mFront = (mFront - 1 + mCap) % mCap;
-  else 
+  else
     mFront = (mFront + 1) % mCap;
   mSize--;
 }

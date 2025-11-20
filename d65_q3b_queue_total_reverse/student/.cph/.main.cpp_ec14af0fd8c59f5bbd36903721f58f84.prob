@@ -1,0 +1,1 @@
+{"name":"Local: main","url":"/Users/macus/Workspace/Cedt/DSAP/d65_q3b_queue_total_reverse/student/main.cpp","tests":[{"id":1763548147286,"input":"5\n10 20 30 40 50","output":"50 40 30 20 10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/macus/Workspace/Cedt/DSAP/d65_q3b_queue_total_reverse/student/main.cpp","group":"local","local":true}
