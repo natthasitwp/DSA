@@ -1,0 +1,1 @@
+{"name":"Local: reorder","url":"/Users/macus/Workspace/Cedt/DSAP/ds04_playlist/reorder.cpp","tests":[{"id":1763700829382,"input":"5\naa\nbb\ncc\ndd\nee\n2\n2\n4\n0","output":"cc ee aa bb dd\ndd bb aa ee cc"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/macus/Workspace/Cedt/DSAP/ds04_playlist/reorder.cpp","group":"local","local":true}
