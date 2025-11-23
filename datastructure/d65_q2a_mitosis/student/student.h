@@ -13,7 +13,6 @@ void CP::stack<T>::mitosis(int a, int b)
     }
     for(size_t i = 0 ; i <= b; i++)
     {
-        
         if(b-i >= a && b-i <= b)
             push(temp[b-i]);
         push(temp[b-i]);
